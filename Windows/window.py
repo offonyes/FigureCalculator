@@ -9,12 +9,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         super(MainWindow, self).__init__(*args, **kwargs)
         self.setupUi(self)
         self.Select_btn.clicked.connect(self.select_shape)
-        self.mainmenu_btn.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.MainPage))
+        self.mainmenu_btn.clicked.connect(self.back_to_mainmenu)
         self.calculate_btn.clicked.connect(lambda: self.calculate(self.FiguresButtonGroup.checkedButton().text(), self.ColorButtonGroup.checkedButton().text()))
 
     def calculate(self, state, color):
         if state == "Circle":
-            r = self.circle_spinbox.value()
+            r = self.radius_spinbox.value()
             area_answer = pi * r ** 2
             length_answer = 2 * pi * r
             self.circle_area_lcd.display(area_answer)
@@ -51,8 +51,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.stackedWidget.setCurrentWidget(getattr(self, f"{shape_name}Page", self.MainPage))
 
         if shape_name == "Circle":
-            self.paint_circle(self.ColorButtonGroup.checkedButton().text(),self.circle_spinbox.value())
-            self.circle_spinbox.valueChanged.connect(lambda: self.paint_circle(self.ColorButtonGroup.checkedButton().text(),self.circle_spinbox.value()))  
+            self.paint_circle(self.ColorButtonGroup.checkedButton().text(),self.radius_spinbox.value())
+            self.radius_spinbox.valueChanged.connect(lambda: self.paint_circle(self.ColorButtonGroup.checkedButton().text(),self.radius_spinbox.value()))  
 
     def draw_rectangle(self, a, b, color_name):
         max_coordinate = max(a, b)
@@ -114,7 +114,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
 
 
-
+    def back_to_mainmenu(self):
+        self.stackedWidget.setCurrentWidget(self.MainPage)
+        self.mainmenu_btn.hide()
+        self.calculate_btn.hide()
 
     def paint_circle(self, color, r):
         size = self.Circle_lbl.size()
