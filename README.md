@@ -1,5 +1,5 @@
 # Geometric Calculator App
-======
+
 This PyQt5-based app is a calculator for four possible geometric figures: Circle, Square, Rectangle, Triangle . The app allows users to calculate the area and perimeter of these figures based on user input.
 
 ## Features
