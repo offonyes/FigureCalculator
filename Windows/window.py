@@ -38,11 +38,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.rectangle_area_lcd.display(a*b)
             self.rectangle_perimeter_lcd.display((a+b)*2)
         else:
-            a = self.parallelogran_ds.value()
-            b = self.parallelogran_ds_2.value()
-            angle_a = self.parallelogran_angle_ds.value()
-            self.parallelogran_area_lcd.display(a*b*sin(angle_a))
-            self.parallelogran_perimeter_lcd.display((a+b)*2)
+            a = self.parallelogram_ds.value()
+            b = self.parallelogram_ds_2.value()
+            angle_a = self.parallelogram_angle_ds.value()
+            self.parallelogram_area_lcd.display(a*b*sin(angle_a))
+            self.parallelogram_perimeter_lcd.display((a+b)*2)
     
     def select_shape(self):
         self.mainmenu_btn.show()
