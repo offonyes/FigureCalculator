@@ -9,12 +9,16 @@ This PyQt5-based app is a calculator for 6 possible geometric figures: Circle, S
 * Home Button: Each figure page has a home button to return to the home page at any moment.
 * Some cool feature with qpainter.
 ## Installation
-To run the app, ensure you have Python and PyQt5 installed. You can install the required dependencies using the following command:
+To run the app, run the run.exe file to start the Figure calculator app.
+```
+run.exe
+```
+Or ensure you have Python and PyQt5 installed. You can install the required dependencies using the following command:
 
 ```py
 pip install PyQt5
 ```
-After installing the dependencies, run the app.py file to start the Figure calculator app.
+After installing the dependencies, run the run.py file to start the Figure calculator app.
 ```py
 python run.py
 ```
