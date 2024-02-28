@@ -46,7 +46,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             angle_a = self.parallelogram_angle_ds.value()
             try:
                 self.draw_parallelogram(a, b, angle_a, color_name)
-                self.parallelogram_area_lcd.display(a*b*sin(angle_a))
+                self.parallelogram_area_lcd.display(a*b*sin(radians(angle_a)))
                 self.parallelogram_perimeter_lcd.display((a+b)*2)
             except:
                  QMessageBox.critical(self, "Error", "Enter a number not equal to zero")
