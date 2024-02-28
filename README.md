@@ -16,7 +16,7 @@ pip install PyQt5
 ```
 After installing the dependencies, run the app.py file to start the Figure calculator app.
 ```py
-python app.py
+python run.py
 ```
 ## Usage
 1. Launch the application.
