@@ -14,12 +14,28 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(640, 490)
         MainWindow.setMinimumSize(QtCore.QSize(640, 490))
         MainWindow.setMaximumSize(QtCore.QSize(640, 490))
-        MainWindow.setStyleSheet("")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
+        self.centralwidget.setStyleSheet("/* QPushButton Style */\n"
+"QPushButton {\n"
+"    background-color: #4CAF50; \n"
+"    color: white; \n"
+"    border: 2px solid #45a049; \n"
+"    border-radius: 5px; \n"
+"    padding: 8px 16px;\n"
+"    font-size: 14px; \n"
+"}\n"
+"QPushButton:hover {\n"
+"    background-color: #45a049;\n"
+"}\n"
+"QPushButton:pressed {\n"
+"    background-color: #3e8e41; \n"
+"}\n"
+"QLCDNumber {\n"
+" color: black;\n"
+"}")
         self.gridLayout_7 = QtWidgets.QGridLayout(self.centralwidget)
         self.gridLayout_7.setObjectName("gridLayout_7")
         spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
@@ -40,7 +56,7 @@ class Ui_MainWindow(object):
         self.MainPage = QtWidgets.QWidget()
         self.MainPage.setStyleSheet("            QGroupBox {\n"
 "                font-weight: bold;\n"
-"                border: 2px solid rgba(0, 0, 0, 190);\n"
+"                border: 2px solid rgba(0, 0, 0, 120);\n"
 "                border-radius: 8px;\n"
 "                margin-top: 10px;\n"
 "                background-color: #ecf0f1;\n"
@@ -191,8 +207,8 @@ class Ui_MainWindow(object):
         spacerItem12 = QtWidgets.QSpacerItem(40, 40, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.gridLayout_4.addItem(spacerItem12, 1, 2, 1, 6)
         self.radius_spinbox = QtWidgets.QDoubleSpinBox(self.groupBox_3)
-        self.radius_spinbox.setMinimumSize(QtCore.QSize(120, 25))
-        self.radius_spinbox.setMaximumSize(QtCore.QSize(150, 30))
+        self.radius_spinbox.setMinimumSize(QtCore.QSize(90, 25))
+        self.radius_spinbox.setMaximumSize(QtCore.QSize(120, 30))
         font = QtGui.QFont()
         font.setPointSize(14)
         self.radius_spinbox.setFont(font)
@@ -251,8 +267,8 @@ class Ui_MainWindow(object):
         self.formLayout.setWidget(1, QtWidgets.QFormLayout.FieldRole, self.circle_length_lcd)
         self.gridLayout_4.addWidget(self.frame, 4, 3, 1, 3)
         self.label = QtWidgets.QLabel(self.groupBox_3)
-        self.label.setMinimumSize(QtCore.QSize(70, 25))
-        self.label.setMaximumSize(QtCore.QSize(90, 30))
+        self.label.setMinimumSize(QtCore.QSize(100, 25))
+        self.label.setMaximumSize(QtCore.QSize(120, 30))
         font = QtGui.QFont()
         font.setPointSize(15)
         self.label.setFont(font)
@@ -640,7 +656,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Calculator"))
         self.calculate_btn.setText(_translate("MainWindow", "Calculate"))
         self.mainmenu_btn.setText(_translate("MainWindow", "Back to main menu"))
         self.label_2.setText(_translate("MainWindow", "Calculator"))
